@@ -15,6 +15,7 @@
     </tr>
   </thead>
   <tbody>
+    <% @cart_items.each do |cart_item| %>
     <tr>
       <td></td>
       <td><%= cart_item.item.with_tax_price%></td>
@@ -22,6 +23,7 @@
       <td><%= cart_item.subtotal %></td>
       <td><%= "削除する", class: "btn btn-danger btn-sm" %></td>
     </tr>
+    <% end %>
   </tbody>
 </table>
 

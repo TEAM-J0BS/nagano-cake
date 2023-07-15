@@ -9,9 +9,14 @@ class Public::CartItemsController < ApplicationController
   end
 
   def destroy_all
+    current_customer.cart_items.destroy_all
   end
 
   def create
+    @cart_item = CartItem.new(cart_item_params)
+    if @cart_item.find_by
+    end
+    @cart_item.save
   end
 
   private
