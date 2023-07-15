@@ -16,6 +16,7 @@ devise_for :admin, skip: [:registrations, :passwords] ,controllers: {
 #管理者側のルーティング設定
 namespace :admin do
   get "/" => "homes#top"
+  resources :items,except: [:destroy]
 end
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
