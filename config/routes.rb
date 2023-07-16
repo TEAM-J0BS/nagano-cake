@@ -13,10 +13,27 @@ devise_for :admin, skip: [:registrations, :passwords] ,controllers: {
 }
 
 
+scope module: :public do
+  get "customers/mypage" => "customers#show"
+  get "customers/information/edit" => "customers#edit"
+  patch "customers/information" => "customers#update"
+  get "customers/unsubscribe" => "customers#unsubscribe"
+  patch "customers/withdraw" => "customers#withdraw"
+
+end
+
+
+
 #管理者側のルーティング設定
 namespace :admin do
   get "/" => "homes#top"
+  resources :items,except: [:destroy]
+  resources :genres,except:  [:new,:destroy]
+  resources :customers, only: [:index, :show, :edit, :update]
 end
+
+
+
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
