@@ -17,9 +17,9 @@
   <tbody>
     <% @cart_items.each do |cart_item| %>
     <tr>
-      <td></td>
+      <td><%= cart_item.item.image %><%= cart_item.item.name %></td>
       <td><%= cart_item.item.with_tax_price%></td>
-      <td><%= "変更", class: "btn btn-success btn-sm" %></td>
+      <td><%= cart_item.item.count %><%= "変更", class: "btn btn-success btn-sm" %></td>
       <td><%= cart_item.subtotal %></td>
       <td><%= "削除する", class: "btn btn-danger btn-sm" %></td>
     </tr>
@@ -32,7 +32,7 @@
 <table class="table">
   <tr>
     <th>合計金額</th>
-    <td></td>
+    <td><%= @total += @cart_items.subtotal %></td>
   </tr>
 </table>
 
