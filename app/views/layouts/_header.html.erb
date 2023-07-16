@@ -17,6 +17,10 @@
           </li>
 
           <li>
+            <%= link_to 'ログアウト', destroy_customer_session_path, method: :delete, class:"btn btn-outline-info mx-1" %>
+          </li>
+          
+          <li>
             <%= link_to '管理者ログイン', new_admin_session_path, class:"btn btn-outline-info mx-1" %>
           </li>
          
