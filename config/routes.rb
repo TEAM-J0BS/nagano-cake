@@ -27,6 +27,8 @@ end
 #管理者側のルーティング設定
 namespace :admin do
   get "/" => "homes#top"
+  resources :items,except: [:destroy]
+  resources :genres,except:  [:new,:destroy]
   resources :customers, only: [:index, :show, :edit, :update]
 end
 
