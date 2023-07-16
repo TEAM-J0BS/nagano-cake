@@ -1,9 +1,8 @@
-<h3>商品一覧</h3> 
+<h3>商品一覧</h3>
 
 <table class='table table-hover table-inverse'>
   <thead>
     <tr>
-      <th></th>
       <th>商品ID</th>
       <th>商品名</th>
       <th>税抜価格</th>
@@ -17,10 +16,10 @@
         <td><%= item.id %></td>
         <td><%= item.name %></td>
         <td><%= item.price %></td>
-        <td><%= item.genre_id %></td>
-        <td><%= item.is_available %></td>
-       
+        <td><%= item.genre.name %></td>
+        <td><%= item.item_status %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
+<%= paginate @items %>
