@@ -21,6 +21,7 @@ class Admin::ItemsController < ApplicationController
 
   def edit
     @item = Item.find(params[:id])
+    @genres = Genre.pluck(:name, :id)
   end
 
   def update
