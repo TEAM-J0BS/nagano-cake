@@ -1,6 +1,7 @@
 class Public::CartItemsController < ApplicationController
   def index
     @cart_items = current_customer.cart_items
+    @total = @cart_items.inject(0) { |sum, item| sum + item.subtotal }
   end
 
   def update
@@ -22,11 +23,14 @@ class Public::CartItemsController < ApplicationController
   def create
     @cart_item = CartItem.new(cart_item_params)
     @cart_item.customer_id = current_customer.id
-    if current_customer.cart_items.find_by(item_id: @cartitem.item_id).present?
-      @cart_item.count += params[:count].to_i
-      @cart_item.save
+    if current_customer.cart_items.find_by(item_id: @cart_item.item_id).present?
+      @cart_item.count += params[:cart_item][:count].to_i
+    end
+
+    if @cart_item.save
+      redirect_to cart_items_path, notice: "商品を追加しました。"
     else
-      @cart_item.save
+      redirect_to item_path(@cart_item.item), notice: "追加に失敗しました。"
     end
   end
 
