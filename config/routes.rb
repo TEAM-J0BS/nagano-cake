@@ -19,6 +19,7 @@ scope module: :public do
   patch "customers/information" => "customers#update"
   get "customers/unsubscribe" => "customers#unsubscribe"
   patch "customers/withdraw" => "customers#withdraw"
+  resources :items,only: [:index,:show]
 
 end
 
