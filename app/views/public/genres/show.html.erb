@@ -1,2 +1,21 @@
-<h1>Public::Genres#show</h1>
-<p>Find me in app/views/public/genres/show.html.erb</p>
+<div class="item-index-box">
+    <div class="item-index">
+    <h3>商品一覧</h3>
+        <table>
+          <tbody>
+            <tr class="item-box">
+              <% @genre.items.each do |item| %>
+                <td class="item">
+                    <%= link_to item_path(item) do %>
+                      <%= image_tag item.image, size: "100x100" %><br>
+                      <%= item.name %><br>
+                      ￥<%= item.price %>
+                    <% end %>
+                </td>
+              <% end %>
+            </tr>
+          </tbody>
+        </table>
+    </div>
+</div>
+
