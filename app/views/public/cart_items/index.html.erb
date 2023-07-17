@@ -1,7 +1,7 @@
 <h3>ショッピングカート</h3>
 
 <div class="destroy_all">
-  <%= "カートを空にする", class: "btn btn-danger btn-sm" %>
+  <%= "カートを空にする", cart_items_destroy_all_path, method: :delete, class: "btn btn-danger btn-sm" %>
 </div>
 
 <table class="table">
@@ -21,7 +21,7 @@
       <td><%= cart_item.item.with_tax_price%></td>
       <td><%= cart_item.item.count %><%= "変更", class: "btn btn-success btn-sm" %></td>
       <td><%= cart_item.subtotal %></td>
-      <td><%= "削除する", class: "btn btn-danger btn-sm" %></td>
+      <td><%= link_to "削除する", cart_item_path(cart_item), method: :delete, class: "btn btn-danger btn-sm" %></td>
     </tr>
     <% end %>
   </tbody>

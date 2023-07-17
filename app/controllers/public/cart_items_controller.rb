@@ -1,6 +1,6 @@
 class Public::CartItemsController < ApplicationController
   def index
-    @cart_items = cart_item_params[:item_id]
+    @cart_items = current_customer.cart_items
   end
 
   def update
@@ -32,6 +32,6 @@ class Public::CartItemsController < ApplicationController
 
   private
   def cart_item_params
-    params.require(:cart_item).permit(:item_id, :count)
+    params.require(:cart_item).permit(:customer_id, :item_id, :count)
   end
 end
