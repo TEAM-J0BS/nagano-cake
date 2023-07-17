@@ -21,6 +21,8 @@ scope module: :public do
   get "customers/unsubscribe" => "customers#unsubscribe"
   patch "customers/withdraw" => "customers#withdraw"
   resources :items,only: [:index,:show]
+  resources :cart_items,only: [:index, :update, :destroy, :create]
+  delete "cart_items/destroy_all" => "cart_items#destroy_all"
 
   resources :addresses, except: [:show]
 
