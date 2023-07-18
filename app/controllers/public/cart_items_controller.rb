@@ -26,7 +26,7 @@ class Public::CartItemsController < ApplicationController
     if current_customer.cart_items.find_by(item_id: @cart_item.item_id).present?
       @cart_item.count += params[:cart_item][:count].to_i
     end
-      
+
     if @cart_item.save
       redirect_to cart_items_path, notice: "商品を追加しました。"
     else
