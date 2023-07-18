@@ -1,21 +1,21 @@
-<div class="item-index-box">
-    <div class="item-index">
-    <h3>商品一覧</h3>
-        <table>
-          <tbody>
-            <tr class="item-box">
-              <% @genre.items.each do |item| %>
-                <td class="item">
-                    <%= link_to item_path(item) do %>
-                      <%= image_tag item.image, size: "100x100" %><br>
-                      <%= item.name %><br>
-                      ￥<%= item.price %>
-                    <% end %>
-                </td>
-              <% end %>
-            </tr>
-          </tbody>
-        </table>
+<div class="cover-index">
+  <div class="container">
+    <div class='row mt-5'>
+      <div class="col-md-2">
+      </div>
+    <div class="col-md-10">
+      <h2 class="font-weight-normal mt-3">商品一覧</h2>
+      <div class="row justify-content-center">
+      <% @genre.items.each do |item| %>
+      <div class="one-post">
+        <%= link_to item_path(item) do %>
+        <p class="caption mx-2"><%= image_tag item.image, format: 'jpeg', size: '300x200' %></p>
+        <% end %>
+        <p class="caption"><%= item.name %></p>
+        <p class="caption">¥<%= item.price %></p>
+      </div>
+      <% end %>
     </div>
+  </div>
 </div>
 
