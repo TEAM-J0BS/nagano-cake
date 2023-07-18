@@ -4,10 +4,13 @@ class Public::CartItemsController < ApplicationController
     @total = @cart_items.inject(0) { |sum, item| sum + item.subtotal }
   end
 
+
   def update
-    @cart_item.update(count: params[:count].to_i)
-    reirect_to cart_items_path
+    @cart_item = CartItem.find(params[:id])
+    @cart_item.update(cart_item_params)
+    redirect_to cart_items_path
   end
+
 
   def destroy
     @cart_item = CartItem.find(params[:id])
@@ -15,10 +18,12 @@ class Public::CartItemsController < ApplicationController
     redirect_to cart_items_path
   end
 
+
   def destroy_all
     current_customer.cart_items.destroy_all
     redirect_to cart_items_path
   end
+
 
   def create
     @cart_item = CartItem.new(cart_item_params)
@@ -33,6 +38,7 @@ class Public::CartItemsController < ApplicationController
       redirect_to item_path(@cart_item.item), notice: "追加に失敗しました。"
     end
   end
+
 
   private
   def cart_item_params
