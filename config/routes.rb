@@ -25,8 +25,11 @@ scope module: :public do
   patch "customers/withdraw" => "customers#withdraw"
   resources :items,only: [:index,:show]
   resources :genres, only: [:show]
-  resources :cart_items,only: [:index, :update, :destroy, :create]
-  delete "cart_items/destroy_all" => "cart_items#destroy_all"
+  resources :cart_items,only: [:index, :update, :destroy, :create] do
+    collection do
+      delete "destroy_all"
+    end
+  end
   resources :addresses, except: [:show]
 end
 

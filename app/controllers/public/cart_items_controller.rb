@@ -7,7 +7,7 @@ class Public::CartItemsController < ApplicationController
 
   def update
     @cart_item = CartItem.find(params[:id])
-    @cart_item.update(count: params[:count].to_i)
+    @cart_item.update(cart_item_params)
     redirect_to cart_items_path
   end
 
@@ -31,7 +31,6 @@ class Public::CartItemsController < ApplicationController
     if current_customer.cart_items.find_by(item_id: @cart_item.item_id).present?
       @cart_item.count += params[:cart_item][:count].to_i
     end
-
 
     if @cart_item.save
       redirect_to cart_items_path, notice: "商品を追加しました。"
