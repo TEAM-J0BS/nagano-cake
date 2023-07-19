@@ -1,28 +1,14 @@
 $(document).ready(function() {
   $('.slider').slick({
-    arrows: false,
     autoplay: true,
-    autoplaySpeed: 5000,
-    speed: 6900,
     infinite: true,
-    pauseOnHover: false,
-    pauseOnFocus: false,
-    cssEase: 'linear',
-    slidesToShow: 4,
+    speed: 500,
+    slidesToShow: 3,
     slidesToScroll: 1,
-    responsive: [
-      {
-        breakpoint: 769,
-        settings: {
-          slidesToShow: 2,
-        }
-      },
-      {
-        breakpoint: 426,
-        settings: {
-          slidesToShow: 1.5,
-        }
-      }
-    ]
+    prevArrow: '<div class="slick-prev"></div>',
+    nextArrow: '<div class="slick-next"></div>',
+    centerMode: true,
+    variableWidth: true,
+    dots: true,
   });
 });

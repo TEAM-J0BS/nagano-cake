@@ -18,15 +18,21 @@ devise_for :admin, skip: [:registrations, :passwords] ,controllers: {
 
 scope module: :public do
   root to: "homes#top"
+  get "search" => "searches#search"
   get "customers/mypage" => "customers#show"
   get "customers/information/edit" => "customers#edit"
   patch "customers/information" => "customers#update"
   get "customers/unsubscribe" => "customers#unsubscribe"
   patch "customers/withdraw" => "customers#withdraw"
-  resources :items,only: [:index,:show]
+  resources :items,only: [:index,:show] do
+    collection do
+      get "/search" => "items#search"
+    end
+  end
   resources :genres, only: [:show]
   resources :cart_items,only: [:index, :update, :destroy, :create]
   delete "cart_items/destroy_all" => "cart_items#destroy_all"
+  
   resources :addresses, except: [:show]
 end
 
@@ -38,6 +44,7 @@ namespace :admin do
   resources :items,except: [:destroy]
   resources :genres,except:  [:new,:destroy]
   resources :customers, only: [:index, :show, :edit, :update]
+  resources :serches, only: [:index]
 end
 
 

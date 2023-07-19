@@ -5,8 +5,9 @@ class Public::CartItemsController < ApplicationController
   end
 
   def update
+    @cart_item = CartItem.find(params[:id])
     @cart_item.update(count: params[:count].to_i)
-    reirect_to cart_items_path
+    redirect_to cart_items_path
   end
 
   def destroy
@@ -33,6 +34,15 @@ class Public::CartItemsController < ApplicationController
       redirect_to item_path(@cart_item.item), notice: "追加に失敗しました。"
     end
   end
+
+
+@cart_item = current_customer.cart_items.find_or_initialize_by(item_id: params[:cart_item][:item_id])
+if @cart_item.persisted?
+  @cart_item.count += params[:cart_item][:count].to_i
+else
+  @cart_item = CartItem.new(cart_item_params)
+  @cart_item.customer_id = current_customer.id
+end
 
   private
   def cart_item_params
