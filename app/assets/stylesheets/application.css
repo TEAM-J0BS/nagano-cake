@@ -9,10 +9,14 @@
  * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
- *
  *= require_tree .
  *= require_self
  */
+
+.backimage-text {
+  position: relative;
+}
+
 
 .slider {
   width: 94%;
@@ -20,13 +24,13 @@
 }
 
 .slider img {
-  width: 60vw;
-  height: auto;
+  width: 300px;
+  height: 200px;
 }
 
 .slider .slick-slide {
   transform: scale(0.8);
-  transition: all .5s;
+  transition: all 0.5s;
   opacity: 0.5;
 }
 
@@ -36,4 +40,47 @@
 }
 
 .slick-prev,
-.slick-next
+.slick-next {
+  position: absolute;
+  top: 42%;
+  cursor: pointer;
+  outline: none;
+  border-top: 2px solid #666;
+  border-right: 2px solid #666;
+  height: 15px;
+  width: 15px;
+}
+
+.slick-prev {
+  left: -1.5%;
+  transform: rotate(-135deg);
+}
+
+.slick-next {
+  right: -1.5%;
+  transform: rotate(45deg);
+}
+
+.slick-dots {
+  text-align: center;
+  margin: 20px 0 0 0;
+}
+
+.slick-dots li {
+  display: inline-block;
+  margin: 0 5px;
+}
+
+.slick-dots button {
+  color: transparent;
+  width: 12px;
+  height: 12px;
+  display: block;
+  border-radius: 50%;
+  background: #FFC0CB; 
+  border: none;
+}
+
+.slick-dots .slick-active button {
+  background: #FF1493; 
+}
