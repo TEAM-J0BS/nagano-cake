@@ -3,7 +3,7 @@ class Item < ApplicationRecord
   belongs_to :genre
   has_many :cart_items
   has_many :oder_details
-  
+
   def item_status
     if is_available == true
       "販売中"

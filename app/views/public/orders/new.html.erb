@@ -3,7 +3,7 @@
     <div class="col">
       <h2>注文情報入力</h2>
 
-      <%= form_with model: @order, url: check_orders_path, method: :post, local: true do |f| %>
+      <%= form_with model: @order, url: "/orders/check", method: :post, local: true do |f| %>
       <div class="payment">
         <h2><strong>支払方法</strong></h2>
         <%= f.radio_button :payment_method, Order.payment_methods.key(0) %>
@@ -40,10 +40,8 @@
           </div>
         </div>
       </div>
+      <%= f.submit "確認画面へ進む", class: "btn btn-primary" %>
       <% end %>
-
-      <%= link_to "確認画面へ進む", check_orders_path, method: :post, class: "btn btn-primary" %>
-
     </div>
   </div>
 </div>

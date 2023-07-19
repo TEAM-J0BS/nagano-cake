@@ -35,24 +35,37 @@
       <table class="table">
         <tr>
           <td>送料</td>
-          <td></td>
+          <td><%= @shipping_fee %></td>
         </tr>
         <tr>
           <td>商品合計</td>
-          <td></td>
+          <td><%= @total %></td>
         </tr>
         <tr>
           <td>請求金額</td>
-          <td></td>
+          <td><%= @total_amount %></td>
         </tr>
       </table>
 
       <h2>支払方法</h2>
-      <%= @order.payment_method %>
+      <%= @order.payment_method_i18n %>
 
       <h2>お届け先</h2>
       <%= @order.postcode %><%= @order.address %><br />
       <%= @order.name %>
+
+      <div class="sent">
+        <%= form_with model: @order, url: "/orders", method: :post do |f| %>
+          <%= f.hidden_field :customer_id, :value => @customer.id %>
+          <%= f.hidden_field :payment_method, :value => @order.payment_method %>
+          <%= f.hidden_field :postcode, :value => @order.postcode %>
+          <%= f.hidden_field :address, :value => @order.address %>
+          <%= f.hidden_field :name, :value => @order.name %>
+          <%= f.hidden_field :shipping_fee, :value => @shipping_fee %>
+          <%= f.hidden_field :total_amount, :value => @total_amount %>
+          <%= f.submit "注文を確定する", class: "btn btn-success" %>
+        <% end %>
+      </div>
 
     </div>
   </div>

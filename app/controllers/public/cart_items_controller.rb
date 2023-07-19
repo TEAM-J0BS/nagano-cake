@@ -26,10 +26,12 @@ class Public::CartItemsController < ApplicationController
 
 
   def create
-    @cart_item = CartItem.new(cart_item_params)
-    @cart_item.customer_id = current_customer.id
+    @cart_item = current_customer.cart_items.find_or_initialize_by(item_id: params[:cart_item][:item_id])
     if current_customer.cart_items.find_by(item_id: @cart_item.item_id).present?
       @cart_item.count += params[:cart_item][:count].to_i
+    else
+      @cart_item = CartItem.new(cart_item_params)
+      @cart_item.customer_id = current_customer.id
     end
 
     if @cart_item.save
