@@ -12,12 +12,14 @@
           </tr>
         </thead>
         <tbody>
+          <% @orders.each do |order| %>
           <tr>
-            <td></td>
+            <td><%= order.created_at %></td>
             <td></td>
             <td></td>
             <td></td>
           </tr>
+          <% end %>
         </tbody>
       </table>
     </div>
