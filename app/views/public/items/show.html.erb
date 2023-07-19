@@ -9,7 +9,7 @@
       <h1><%= @item.name %></h1>
       <h3><%= @item.introduction %></h3>
       <h2><%= @item.with_tax_price %>(税込)</h2>
-      
+
       <%= form_with model: @cart_item, method: :post do |f| %>
       <%= f.select :count, 1..10, prompt: "個数選択" %>
       <%= f.submit "カートに入れる", class: "btn btn-success" %>

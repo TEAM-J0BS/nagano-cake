@@ -30,6 +30,12 @@ scope module: :public do
       delete "destroy_all"
     end
   end
+  resources :orders, only: [:new, :create, :index, :show] do
+    collection do
+      post "check"
+      get "complete"
+    end
+  end
   resources :addresses, except: [:show]
 end
 
@@ -41,6 +47,8 @@ namespace :admin do
   resources :items,except: [:destroy]
   resources :genres,except:  [:new,:destroy]
   resources :customers, only: [:index, :show, :edit, :update]
+  resources :orders, only: [:index, :show, :update]
+  resources :order_details, only: [:update]
 end
 
 
