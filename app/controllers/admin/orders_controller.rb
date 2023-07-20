@@ -9,5 +9,24 @@ class Admin::OrdersController < ApplicationController
   end
 
   def update
+    order = Order.find(params[:id])
+    order_details = OrderDetail.where(order_id: params[:id])
+    Order.transaction do
+      order.update(order_params)
+      if order.status == "check"
+        order_details.update(status: 1)
+      end
+    end
+      flash[:notice] = "updated order status successfully"
+      redirect_to admin_order_path(order)
+    rescue => e
+      flash[:alert] = "failed update"
+      redirect_to admin_order_path(order)
+  end
+
+  private
+
+  def order_params
+    params.require(:order).permit(:status)
   end
 end
