@@ -10,12 +10,12 @@ class Admin::OrderDetailsController < ApplicationController
       @order_detail.update(order_detail_params)
 
       @order_details.each do |order_detail|
-        if order_detail.status != "finish"
+        if order_detail.making_status != "finish"
           is_updated = false
         end
       end
 
-      @order.update(status: 2) if @order_details.any? { |oi| oi.status == "maiking" }
+      @order.update(status: 2) if @order_details.any? { |oi| oi.making_status == "maiking" }
       @order.update(status: 3) if is_updated
     end
 
@@ -31,6 +31,6 @@ class Admin::OrderDetailsController < ApplicationController
   private
 
   def order_detail_params
-    params.require(:order_detail).permit(:status)
+    params.require(:order_detail).permit(:making_status)
   end
 end

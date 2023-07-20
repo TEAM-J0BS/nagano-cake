@@ -13,10 +13,15 @@ ja:
 
   order_detail:
     making_status:
-    impossible: "着手不可"
-    wait: "製作待ち"
-    making: "製作中"
-    finish: "製作完了"
+      impossible: "着手不可"
+      wait: "製作待ち"
+      making: "製作中"
+      finish: "製作完了"
+
+  time:
+    formats:
+      default: "%Y/%m/%d %H:%M:%S"
+      short: "%Y/%m/%d"
 
   activerecord:
     errors:

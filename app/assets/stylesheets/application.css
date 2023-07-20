@@ -23,7 +23,7 @@
   z-index: 999;
   width: 100%;
   height: 100%;
-  background: #333;
+  background: #ff99b3;
   text-align: center;
   color: #fff;
 }
@@ -35,25 +35,110 @@
   transform: translate(-50%, -50%);
 }
 
-.fadeUp {
-  animation-name: fadeUpAnime;
-  animation-duration: 0.5s;
-  animation-fill-mode: forwards;
+body {
+  background:#ff99b3
+}
+
+body.appear{
+  background:#fff;
+}
+
+
+/* 画面遷移アニメーション */
+.splashbg1,
+.splashbg2{
+  display: none;
+}
+
+/* 右に消えるエリア */
+body.appear .splashbg1,
+body.appear .splashbg2{
+  display:block;
+}
+
+body.appear .splashbg1{
+  animation-name:PageAnime;
+  animation-duration:1.8s;
+  animation-timing-function:ease-in-out;
+  animation-fill-mode:forwards;
+  content: "";
+  position:fixed;
+  z-index:999;
+  width: 100%;
+  height:100vh;
+  top: 0;
+  left: 50%;
+  transform: scaleX(1);
+  background-color: #ff99b3;
+}
+
+@keyframes PageAnime{
+  0% {
+    transform-origin:left;
+    transform:scaleX(1);
+  }
+  50% {
+    transform-origin:right;
+  }
+  100% {
+    transform-origin:right;
+    transform:scaleX(0);
+  }
+}
+
+/* 左に消えるエリア */
+body.appear .splashbg2{
+  animation-name:PageAnime2;
+  animation-duration:1.8s;
+  animation-timing-function:ease-in-out;
+  animation-fill-mode:forwards;
+  content: "";
+  position:fixed;
+  z-index:999;
+  width: 100%;
+  height:100vh;
+  top: 0;
+  right: 50%;
+  transform: scaleX(1);
+  background-color: #ff99b3;
+}
+
+@keyframes PageAnime2{
+  0% {
+    transform-origin:right;
+    transform:scaleX(1);
+  }
+  50% {
+    transform-origin:left;
+  }
+  100% {
+    transform-origin:left;
+    transform:scaleX(0);
+  }
+}
+
+/* 画面遷移の後現れるコンテンツ */
+#container {
   opacity: 0;
 }
 
-@keyframes fadeUpAnime {
-  from {
+body.appear #container {
+  animation-name:PageAnimeAppear;
+  animation-duration:1s;
+  animation-delay:0.2s;
+  animation-fill-mode:forwards;
   opacity: 0;
-  transform: translateY(100px);
+}
+
+@keyframes PageAnimeAppear {
+  0% {
+    opacity: 0;
   }
-  
-  
-to {
-  opacity: 1;
-    transform: translateY(0);
+  100% {
+    opacity: 1;
+  }
 }
-}
+
 
 
 /* 新着商品スライドショー */
@@ -116,10 +201,10 @@ to {
   height: 12px;
   display: block;
   border-radius: 50%;
-  background: #FFC0CB; 
+  background: #FFC0CB;
   border: none;
 }
 
 .slick-dots .slick-active button {
-  background: #FF1493; 
+  background: #FF1493;
 }
