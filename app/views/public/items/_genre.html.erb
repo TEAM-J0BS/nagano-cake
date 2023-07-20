@@ -1,9 +1,6 @@
-<table>
-  <tr>
-    <th>ジャンル検索</th>
-  </tr>
-  <tr>
-    <td><%= @item.genre.name %></td>
-    <td><%= @item.genre.name %></td>
-  </tr>
+<table class = "table table-bordered"> 
+  <tr><th>ジャンル検索</th></tr>
+  <% @genres.each do |genre| %>
+  <tr><th><%= link_to genre.name, genre_path(genre) %></th></tr>
+  <% end %>
 </table>
