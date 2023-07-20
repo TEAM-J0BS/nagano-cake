@@ -65,7 +65,7 @@
               <td class="align-middle">¥<%= order_detail.total_price.to_s(:delimited) %></td>
               <td>
                 <%= form_with model: order_detail, url: admin_order_detail_path(order_detail), method: :patch do |f| %>
-                  <%= f.select :status, OrderDetail.making_statuses.keys.map { |status| [I18n.t("enums.order_detail.making_status.#{status}"), status] }, {}, class: "form-control" %>
+                  <%= f.select :making_status, OrderDetail.making_statuses.keys.map { |status| [I18n.t("enums.order_detail.making_status.#{status}"), status] }, {}, class: "form-control" %>
                   <%= f.submit '更新', class:"btn btn-success form-control" %>
                 <% end %>
               </td>
