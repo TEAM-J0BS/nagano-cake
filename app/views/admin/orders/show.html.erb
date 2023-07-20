@@ -28,14 +28,14 @@
 
         <tr>
           <th>支払方法</th>
-          <td><%= @order.payment_i18n %></td>
+          <td><%= @order.payment_method_i18n %></td>
         </tr>
 
           <tr>
             <th>注文ステータス</th>
             <td>
               <%= form_with model: @order, url: admin_order_path, method: :patch do |f| %>
-                <%= f.select :status, Order.statuses_i18n.invert, {}, class:"form-control col-10" %>
+               <%= f.select :status, Order.statuses_i18n.invert, {}, class:"form-control col-10" %>
                 <%= f.submit '更新', class:"btn btn-success col-10" %>
               <% end %>
             </td>
@@ -59,10 +59,10 @@
         <tbody class="table table-borderless">
           <% @order.order_details.each do |order_detail| %>
             <tr class="border-bottom">
-              <td class="align-middle"><%= order_detial.item.name %></td>
-              <td class="align-middle">¥<%= order_detail..with_tax_price.to_s(:delimited) %></td>
+              <td class="align-middle"><%= order_detail.item.name %></td>
+              <td class="align-middle">¥<%= order_detail.tax_price.to_s(:delimited) %></td>
               <td class="align-middle"><%= order_detail.count %></td>
-              <td class="align-middle">¥<%= order_detail.total_amount.to_s(:delimited) %></td>
+              <td class="align-middle">¥<%= order_detail.total_price.to_s(:delimited) %></td>
               <td>
                 <%= form_with model: order_detail, url: admin_order_detail_path(order_detail), method: :patch do |f| %>
                   <%= f.select :status, OrderDetail.statuses_i18n.invert, {}, class:"form-control" %>
