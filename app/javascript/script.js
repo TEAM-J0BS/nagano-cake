@@ -1,3 +1,9 @@
+// topアニメーション
+$(window).on('load', function(){
+  $("#splash").delay(1500).fadeOut('slow');
+  $("#splash_logo").dalay(1200).fadeOut('slow');
+});
+
 
 $(document).ready(function() {
   $('.slider').slick({
