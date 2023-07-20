@@ -3,6 +3,11 @@ class Admin::OrdersController < ApplicationController
     @orders = Order.page(params[:page]).per(10).order("created_at desc")
   end
 
+  def individual
+    @customer = Customer.find(params[:id])
+    @orders = @customer.orders.page(params[:page]).per(10).order("created_at desc")
+  end
+
   def show
     @order = Order.find(params[:id])
     @total = @order.order_details.inject(0) { |sum, order_detail| sum + order_detail.total_price }
