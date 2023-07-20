@@ -1,7 +1,7 @@
 <div class="container">
   <div class="row">
     <div class="col">
-      <h2>注文情報確認</h2>
+      <h2>注文履歴一覧</h2>
       <table class="table">
         <thead>
           <tr>
@@ -21,11 +21,12 @@
             </td>
             <td><%= order.customer.full_name %></td>
             <td><%= order.order_details.sum(:count) %></td>
-            <td></td>
+            <td><%= order.status_i18n %></td>
           </tr>
           <% end %>
         </tbody>
       </table>
+      <%= paginate @orders %>
     </div>
   </div>
 </div>
