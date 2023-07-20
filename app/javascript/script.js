@@ -1,10 +1,15 @@
 // topアニメーション
 $(window).on('load', function(){
-  $("#splash").delay(1500).fadeOut('slow');
-  $("#splash_logo").dalay(1200).fadeOut('slow');
+  $("#splash_logo").delay(1200).fadeOut('slow');
+  $("#splash").delay(1500).fadeOut('slow',function(){
+    $('body').addClass('appear');
+  });
+  $('.splashbg1').on('animationend', function(){
+  });
 });
 
 
+// スライドショー
 $(document).ready(function() {
   $('.slider').slick({
     autoplay: true,
