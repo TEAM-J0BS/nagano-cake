@@ -1,0 +1,41 @@
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <h4 class="my-5">注文履歴一覧</h4>
+          <table class="table table-bordered">
+            <% @orders.each do |order| %>
+            
+            <tr>
+              <th class="bg-light">注文日</th>
+              <td><%= order.created_at.strftime('%Y/%m/%d %H:%M:%S') %></td>
+            </tr>
+            
+            <tr>
+              <th class="bg-light">配送先</th>
+              <td><%= order.address %></td>
+            </tr>
+
+            <tr>
+              <th class="bg-light">注文商品</th>
+              <td><%= order.item %></td>
+            </tr>
+
+            <tr>
+              <th class="bg-light">支払金額</th>
+              <td></td>
+            </tr>
+
+            <tr>
+              <th class="bg-light">ステータス</th>
+              <td></td>
+            </tr>
+
+            <tr>
+              <th class="bg-light">注文詳細</th>
+              <td></td>
+            </tr>
+            <% end %>
+          </table>
+    </div>
+  </div>
+</div>
