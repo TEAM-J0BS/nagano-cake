@@ -55,9 +55,11 @@ class Public::OrdersController < ApplicationController
   end
 
   def index
+    @orders = Order.all
   end
 
   def show
+    @order = Oder.find(params[:id])
   end
 
   private
