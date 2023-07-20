@@ -59,7 +59,7 @@ class Public::OrdersController < ApplicationController
   end
 
   def show
-    @order = O.find(params[:id])
+    @order = Oder.find(params[:id])
   end
 
   private
