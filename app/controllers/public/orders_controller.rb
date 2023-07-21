@@ -1,4 +1,6 @@
 class Public::OrdersController < ApplicationController
+  before_action :authenticate_customer!
+
   def new
     @order = Order.new
     @customer = current_customer
@@ -49,8 +51,7 @@ class Public::OrdersController < ApplicationController
       redirect_to complete_orders_path
       cart_items.destroy_all
     else
-      @order = Order.new(order_params)
-      render :new
+      redirect_to new_order_path, notice: "郵便番号、住所、宛名をご記入下さい。"
     end
   end
 
