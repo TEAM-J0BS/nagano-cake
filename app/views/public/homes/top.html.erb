@@ -7,7 +7,7 @@
 <div class="container mt-5" id="container">
   <div class="row">
     <div class="col-md-2">
-      <%# ジャンル検索 %>
+      <%= render "/public/items/genre", genres: @genres %>
     </div>
     <div class="col-md-10">
       <div class="backimage">
@@ -16,7 +16,7 @@
           <p class="guidance">ようこそ、ながのcakeへ！<br>このサイトは、ケーキ販売のECサイトになります。<br>会員でない方も商品の閲覧はできますが、<br>購入には会員登録が必要になります。</p>
         </div>
       </div>
-      
+
       <div class="mt-5">
         <h3><strong>新着商品</strong></h3>
         <div class="row mt-4">
