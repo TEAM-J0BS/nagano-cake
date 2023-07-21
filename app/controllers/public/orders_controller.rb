@@ -55,11 +55,13 @@ class Public::OrdersController < ApplicationController
   end
 
   def index
-    @orders = Order.all
+    @orders = Order.all.order("created_at desc")
   end
 
   def show
-    @order = Oder.find(params[:id])
+    @order = Order.find(params[:id])
+    @cart_items = current_customer.cart_items
+    @total = @cart_items.inject(0) { |sum, item| sum + item.subtotal}
   end
 
   private
