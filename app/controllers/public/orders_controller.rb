@@ -57,6 +57,7 @@ class Public::OrdersController < ApplicationController
 
   def index
     @orders = Order.all.order("created_at desc")
+    @orders = current_customer.orders.order("created_at desc")
   end
 
   def show
