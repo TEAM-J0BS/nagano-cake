@@ -13,6 +13,11 @@
  *= require_self
  */
 
+/* ページネーション */
+.pagination {
+  justify-content: center;
+}
+
 .backimage-text {
   position: relative;
 }
