@@ -1,25 +1,35 @@
 class Public::CartItemsController < ApplicationController
-  
- def index
-  @cart_items = current_customer.cart_items
-  @total = @cart_items.inject(0) { |sum, item| sum + item.subtotal }
- end
+  before_action :authenticate_customer!
+
+  def index
+    @cart_items = current_customer.cart_items
+    @total = @cart_items.inject(0) { |sum, item| sum + item.subtotal }
+  end
 
   def update
     @cart_item = CartItem.find(params[:id])
-    @cart_item.update(cart_item_params)
-    redirect_to cart_items_path
+    if @cart_item.update(cart_item_params)
+      redirect_to cart_items_path, notice: "数量を変更しました。"
+    else
+      redirect_to cart_items_path, notice: "数量を変更できませんでした。"
+    end
   end
 
   def destroy
     @cart_item = CartItem.find(params[:id])
-    @cart_item.destroy
-    redirect_to cart_items_path
+    if @cart_item.destroy
+      redirect_to cart_items_path, notice: "商品を削除しました。"
+    else
+      redirect_to cart_items_path, notice: "商品の削除に失敗しました。"
+    end
   end
 
   def destroy_all
-    current_customer.cart_items.destroy_all
-    redirect_to cart_items_path
+    if current_customer.cart_items.destroy_all
+      redirect_to items_path, notice: "カートを空にしました。"
+    else
+      redirect_to cart_items_path, notice: "削除に失敗しました。"
+    end
   end
 
 
@@ -43,4 +53,6 @@ class Public::CartItemsController < ApplicationController
   def cart_item_params
     params.require(:cart_item).permit(:customer_id, :item_id, :count)
   end
+
+
 end
