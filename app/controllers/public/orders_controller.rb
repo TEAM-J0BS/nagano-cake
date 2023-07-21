@@ -31,6 +31,11 @@ class Public::OrdersController < ApplicationController
       @order.address = params[:order][:address]
       @order.name = params[:order][:name]
     end
+
+    if @order.address.blank? || @order.name.blank?
+      flash[:notice] = "正しい情報を入力してください"
+      redirect_to request.referer
+    end
   end
 
   def complete
