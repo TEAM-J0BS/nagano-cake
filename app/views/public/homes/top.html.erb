@@ -1,0 +1,37 @@
+<div id="splash">
+  <p>Nagano Cake</p>
+</div>
+<div class="splashbg1"></div>
+<div class="splashbg2"></div>
+
+<div class="container mt-5" id="container">
+  <div class="row">
+    <div class="col-md-2">
+      <%= render "/public/items/genre", genres: @genres %>
+    </div>
+    <div class="col-md-10">
+      <div class="backimage">
+        <%= image_tag 'top.jpg', class: "image img-fluid" %>
+        <div class="text">
+          <p class="guidance">ようこそ、ながのcakeへ！<br>このサイトは、ケーキ販売のECサイトになります。<br>会員でない方も商品の閲覧はできますが、<br>購入には会員登録が必要になります。</p>
+        </div>
+      </div>
+
+      <div class="mt-5">
+        <h3><strong>新着商品</strong></h3>
+        <div class="row mt-4">
+          <ul class="slider">
+            <li><%= image_tag "practice/1.jpg" %></li>
+            <li><%= image_tag "practice/2.jpg" %></li>
+            <li><%= image_tag "practice/3.jpg" %></li>
+            <li><%= image_tag "practice/4.jpg" %></li>
+            <li><%= image_tag "practice/5.jpg" %></li>
+          </ul>
+        </div>
+        <p class="text-center mt-5">
+          <%= link_to 'すべての商品を見る', items_path %>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>

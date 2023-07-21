@@ -1,0 +1,6 @@
+<table class = "table table-bordered"> 
+  <tr><th>ジャンル検索</th></tr>
+  <% @genres.each do |genre| %>
+  <tr><th><%= link_to genre.name, genre_path(genre) %></th></tr>
+  <% end %>
+</table>

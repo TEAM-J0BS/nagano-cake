@@ -1,0 +1,50 @@
+<h4 class="my-4 mr-10">商品新規登録</h4>
+<div class='container'>
+  <div class='row'>
+    <div class="col-sm-12 col-md-8 col-lg-5 px-5 px-sm-0 mx-auto">
+      <table class="table table-borderless">
+        <%= form_with model:[:admin, @item] do |f| %>
+
+        <tr>
+          <td>商品画像</td>
+          <td><%= f.file_field :image, accept: "image/*" %></td>
+        </tr>
+
+        <tr>
+          <td>商品名</td>
+          <td><%= f.text_field :name %></td>
+        </tr>
+
+        <tr>
+          <td>商品説明</td>
+          <td><%= f.text_area :introduction %></td>
+        </tr>
+
+          <tr>
+          <td>ジャンル</td>
+          <td><%= f.select :genre_id, @genres,include_blank: "--選択して下さい" %></td>
+        </tr>
+
+        <tr>
+          <td>税抜価格</td>
+          <td><%= f.text_field :price %>円</td>
+        </tr>
+
+        <tr>
+          <td>販売ステータス</td>
+          <td><%= f.radio_button :is_available, true %>
+              <%= f.label :is_available, "販売中" %>
+              <%= f.radio_button :is_available, false %>
+              <%= f.label :is_available, "販売停止中" %>
+           </td>
+        </tr>
+
+        <tr>
+          <td></td>
+          <td><%= f.submit '新規登録', class: "btn btn-success" %></td>
+              <% end %>
+        </tr>
+      </table>
+    </div>
+  </div>
+</div>
