@@ -9,20 +9,20 @@ class Admin::OrdersController < ApplicationController
   end
 
   def update
-    order = Order.find(params[:id])
-    order_details = OrderDetail.where(order_id: params[:id])
-    Order.transaction do
-      order.update(order_params)
-      if order.status == "check"
-        order_details.update(status: 1)
-      end
+    @order = Order.find(params[:id])
+    @order_details = OrderDetail.where(order_id: params[:id])
+
+    if @order.update(order_params)
+      @order_details.update_all(status: "wait") if @order.status == "check"
     end
-      flash[:notice] = "updated order status successfully"
-      redirect_to admin_order_path(order)
-    rescue => e
-      flash[:alert] = "failed update"
-      redirect_to admin_order_path(order)
+
+    flash[:notice] = "注文ステータスを更新しました。"
+    redirect_to admin_order_path(@order)
+  rescue => e
+    flash[:alert] = "注文ステータスが更新"
+    redirect_to admin_order_path(@order)
   end
+
 
   private
 

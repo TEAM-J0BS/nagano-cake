@@ -4,28 +4,17 @@ class Admin::OrderDetailsController < ApplicationController
     @order_detail = OrderDetail.find(params[:id])
     @order = @order_detail.order
     @order_details = @order.order_details
-    is_updated = true
-
-    OrderDetail.transaction do
-      @order_detail.update(order_detail_params)
-
-      @order_details.each do |order_detail|
-        if order_detail.making_status != "finish"
-          is_updated = false
-        end
-      end
-
-      @order.update(status: 2) if @order_details.any? { |oi| oi.making_status == "maiking" }
-      @order.update(status: 3) if is_updated
-    end
+    @order_detail.update(order_detail_params)
+    @making_statuses = @order_details.pluck(:making_status)
+    @order.update(status: "making") if @making_statuses.any?{|val| val == "making" }
+    @order.update(status: "standby") if @making_statuses.all?{|val| val ==  "finish"}
+    redirect_to admin_order_path(@order)
 
     if @order_detail.errors.any?
-      flash[:alert] = "Failed to update order item"
+      flash[:alert] = "製作ステータスが更新できませんでした。"
     else
-      flash[:notice] = "Updated order item successfully"
+      flash[:notice] = "製作ステータスを更新しました。"
     end
-
-    redirect_to admin_order_path(@order)
   end
 
   private
