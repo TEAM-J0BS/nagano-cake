@@ -9,10 +9,15 @@
     <div class="collapse navbar-collapse" id="navbarNavDropdown">
       <ul class="navbar-nav ml-auto mx-5">
       <% if customer_signed_in? %>
-        <div class="d-flex align-items-center">
-          <p class="mb-0 font-weight-bold">ようこそ、<%= current_customer.last_name %>さん！</p>
+        <div class="d-flex justify-content-around align-items-center">
+          <h5 class="mb-0 font-weight-bold">ようこそ、<%= current_customer.last_name %>さん！</h5>
+        </div>
+      <% elsif admin_signed_in? %>
+        <div class="d-flex justify-content-around align-items-center">
+          <h5 class="mb-0 font-weight-bold">管理者ログイン中</h5>
         </div>
       <% end %>
+          
 
         <% if customer_signed_in? %>
 
