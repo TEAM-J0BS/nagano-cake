@@ -4,6 +4,11 @@ class Public::OrdersController < ApplicationController
   def new
     @order = Order.new
     @customer = current_customer
+    if current_customer.cart_items.count.zero?
+      redirect_to items_path, notice: "カートが空です。商品を追加してください。"
+    else
+      @oreder = Order.new
+    end
   end
 
   def check
@@ -31,6 +36,11 @@ class Public::OrdersController < ApplicationController
       @order.address = params[:order][:address]
       @order.name = params[:order][:name]
     end
+
+    if @order.address.blank? || @order.name.blank?
+      flash[:notice] = "正しい情報を入力してください"
+      redirect_to request.referer
+    end
   end
 
   def complete
@@ -51,7 +61,7 @@ class Public::OrdersController < ApplicationController
       redirect_to complete_orders_path
       cart_items.destroy_all
     else
-      redirect_to new_order_path, notice: "郵便番号、住所、宛名をご記入下さい。"
+      redirect_to new_order_path, notice: "支払い方法・配送先を選択してください。"
     end
   end
 

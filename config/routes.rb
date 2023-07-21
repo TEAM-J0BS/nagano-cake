@@ -54,7 +54,11 @@ namespace :admin do
   resources :genres,except:  [:new,:destroy]
   resources :customers, only: [:index, :show, :edit, :update]
   resources :serches, only: [:index]
-  resources :orders, only: [:index, :show, :update]
+  resources :orders, only: [:index, :show, :update] do
+    member do
+      get "individual"
+    end
+  end
   resources :order_details, only: [:update]
 end
 
