@@ -1,6 +1,6 @@
 class Public::ItemsController < ApplicationController
  before_action :authenticate_customer!,only:[:show]
-  
+
 
   def index
     @items = Item.page(params[:page]).per(5)
@@ -10,10 +10,6 @@ class Public::ItemsController < ApplicationController
   end
 
   def show
-    user = User.find(params[:id])
-  unless user.id == current_user.id
-    redirect_to new_customer_session_path
-  end
     @item = Item.find(params[:id])
     @genres = Genre.all
     @cart_item = CartItem.new
