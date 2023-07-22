@@ -24,18 +24,18 @@
             <%= @customer.full_name %>
           </p>
         </div>
-        
-        <% if current_customer.addresses.present? %>
+
         <div class="register ml-4">
           <% if current_customer.addresses.present? %>
-          <%= f.radio_button :select_address, 1 %> 登録済住所から選択<br />
+            <%= f.radio_button :select_address, 1 %> 登録済住所から選択<br />
             <p class="ml-3"><%= f.select :address_id, options_from_collection_for_select( Address.all, :id, :full_address ), placeholder: "配送先を登録してください" %></p>
           <% else %>
-            <p class="ml-3">配送先を登録すると選択できます。</p>
+            <p>
+              登録済住所は配送先を登録すると選択できます。
+            </p>
           <% end %>
         </div>
-        <% end %>
-        
+
         <div class="new_address ml-4">
           <%= f.radio_button :select_address, 2 %> 新しいお届け先
           <div class="ml-3">
