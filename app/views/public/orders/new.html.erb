@@ -1,7 +1,7 @@
-<div class="container">
+<div class="container input">
   <div class="row">
     <div class="col">
-      <h4 class="my-5">注文情報入力</h4>
+      <h4 class="my-5 new">注文情報入力</h4>
 
       <%= form_with model: @order, url: "/orders/check", method: :post, local: true do |f| %>
       <div class="payment mb-3">
@@ -28,7 +28,7 @@
         <div class="register ml-4">
           <% if current_customer.addresses.present? %>
             <%= f.radio_button :select_address, 1 %> 登録済住所から選択<br />
-            <p class="ml-3"><%= f.select :address_id, options_from_collection_for_select( Address.all, :id, :full_address ), placeholder: "配送先を登録してください" %></p>
+            <p class="ml-3"><%= f.select :address_id, options_from_collection_for_select( Address.all, :id, :full_address ) %></p>
           <% else %>
             <p>
               登録済住所は配送先を登録すると選択できます。

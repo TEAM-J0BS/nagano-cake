@@ -1,7 +1,7 @@
 <div class="container">
   <div class="row">
     <div class="col">
-      <h4 class="my-5"><%= @customer.full_name %>さんの注文履歴</h4>
+      <h4 class="my-5 individual-list"><%= @customer.full_name %>さんの注文履歴</h4>
       <table class="table">
         <thead>
           <tr>
@@ -14,7 +14,7 @@
           <% @orders.each do |order| %>
           <tr>
             <td>
-              <%= link_to admin_order_path(order.id) do %>
+              <%= link_to admin_order_path(order.id), class: "link" do %>
                 <%= order.created_at.strftime('%Y/%m/%d %H:%M:%S') %>
               <% end %>
             </td>
@@ -24,6 +24,9 @@
           <% end %>
         </tbody>
       </table>
+      <div class="pagenation mb-3">
+        <%= paginate @orders %>
+      </div>
     </div>
   </div>
 </div>

@@ -1,3 +1,22 @@
 // Place all the styles related to the public/cart_items controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+.cart_item {
+  height: auto;
+  width: 220px;
+  border-bottom: solid;
+  border-width: 5px;
+  border-color: #FFD1D1;
+}
+
+th {
+  background-color: #FFD1D1;
+}
+
+td {
+  background-color: #FFE3E1;
+}
+
+.note-text {
+  margin-top: 150px;
+}

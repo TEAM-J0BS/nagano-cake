@@ -1,5 +1,5 @@
 <header class="sticky-top">
-  <nav class="navbar navbar-expand-lg navbar-light bg-light py-4">
+  <nav class="navbar navbar-expand-lg py-4">
     <a>
       <%= link_to 'LOGO', root_path, data: { "turbolinks" => false }, class: "ml-4" %>
     </a>
@@ -17,7 +17,7 @@
           <h5 class="mb-0 font-weight-bold">管理者ログイン中</h5>
         </div>
       <% end %>
-          
+
 
         <% if customer_signed_in? %>
 
