@@ -5,7 +5,7 @@
 
       <% if @cart_items.any? %>
       <div class="text-right mb-4">
-        <%= link_to "カートを空にする", destroy_all_cart_items_path, method: :delete, class: "btn btn-danger btn-sm" %>
+        <%= link_to "カートを空にする", destroy_all_cart_items_path, method: :delete, class: "btn btn-sm", style: "background-color: #FF9494; color: white;" %>
       </div>
 
       <table class="table table-bordered">
@@ -26,11 +26,11 @@
             <td>
               <%= form_with model: cart_item do |f| %>
                 <%= f.select :count, 1..10, prompt: "個数選択" %>
-                <%= f.submit "変更", class: "btn btn-success btn-sm" %>
+                <%= f.submit "変更", class: "btn btn-sm", style: "background-color: #64CCC5; color: white;" %>
               <% end %>
             </td>
             <td><%= cart_item.subtotal.to_s(:delimited) %></td>
-            <td><%= link_to "削除する", cart_item_path(cart_item), method: :delete, class: "btn btn-danger btn-sm" %></td>
+            <td><%= link_to "削除する", cart_item_path(cart_item), method: :delete, class: "btn btn-sm", style: "background-color: #FF9494; color: white;" %></td>
           </tr>
           <% end %>
         </tbody>
@@ -39,7 +39,7 @@
       <div class="container">
         <div class="row">
           <div class="col-md-3">
-            <%= link_to "買い物を続ける", items_path, class: "btn btn-primary" %>
+            <%= link_to "買い物を続ける", items_path, class: "btn", style: "background-color: #9AC5F4; color: white;" %>
           </div>
           <div class="col-md-4 offset-5">
             <table class="table table-bordered">
@@ -52,7 +52,7 @@
         </div>
       </div>
       <div class="row justify-content-center mt-5 mb-5">
-        <%= link_to "情報入力に進む", new_order_path, class: "btn btn-success" %>
+        <%= link_to "情報入力に進む", new_order_path, class: "btn", style: "background-color: #64CCC5; color: white;" %>
       </div>
       <% else %>
       <div class="row justify-content-center">

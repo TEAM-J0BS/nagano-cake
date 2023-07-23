@@ -1,7 +1,7 @@
 <div class="container input">
   <div class="row">
     <div class="col">
-      <h4 class="my-5 new">注文情報入力</h4>
+      <h4 class="my-5 order-new">注文情報入力</h4>
 
       <%= form_with model: @order, url: "/orders/check", method: :post, local: true do |f| %>
       <div class="payment mb-3">
@@ -14,7 +14,7 @@
         </div>
       </div>
 
-      <div class="address">
+      <div class="order-address">
         <h4><strong>お届け先</strong></h4>
         <div class="my_address ml-4">
           <%= f.radio_button :select_address, 0, checked: true %> ご自身の住所<br />
@@ -25,7 +25,7 @@
           </p>
         </div>
 
-        <div class="register ml-4">
+        <div class="order-register ml-4">
           <% if current_customer.addresses.present? %>
             <%= f.radio_button :select_address, 1 %> 登録済住所から選択<br />
             <p class="ml-3"><%= f.select :address_id, options_from_collection_for_select( Address.all, :id, :full_address ) %></p>
@@ -57,7 +57,7 @@
         </div>
       </div>
       <div class="row justify-content-center mt-3 mb-5">
-        <%= f.submit "確認画面へ進む", class: "btn btn-primary" %>
+        <%= f.submit "確認画面へ進む", class: "btn", style: "background-color: #64CCC5; color: white;" %>
       </div>
       <% end %>
     </div>

@@ -1,6 +1,6 @@
 <div class="container comfirm">
   <div class="row">
-    <div class="col-md-7">
+    <div class="col-md-7 mb-5">
       <h4 class="my-5 check">注文情報確認</h4>
       <table class="table table-bordered">
         <thead>
@@ -76,7 +76,7 @@
             <%= f.hidden_field :name, :value => @order.name %>
             <%= f.hidden_field :shipping_fee, :value => @shipping_fee %>
             <%= f.hidden_field :total_amount, :value => @total_amount %>
-            <%= f.submit "注文を確定する", class: "btn btn-success" %>
+            <%= f.submit "注文を確定する", class: "btn", style: "background-color: #64CCC5; color: white;" %>
           <% end %>
         </div>
       </div>

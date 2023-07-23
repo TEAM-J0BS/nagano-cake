@@ -255,14 +255,18 @@ h1, h4, p, th, td {
   height: 620px;
 }
 
-.thanks-text {
-  line-height: 620px;
-}
-
 .link {
   text-decoration: none;
   color: #5c3e26;
   border-bottom: solid;
   border-width: 1px;
   border-color: #5c3e26;
+}
+
+th {
+  background-color: #FFD1D1;
+}
+
+td {
+  background-color: #FFE3E1;
 }

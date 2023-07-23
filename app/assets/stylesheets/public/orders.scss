@@ -1,16 +1,12 @@
 // Place all the styles related to the public/orders controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
-.new, .check, .list {
+.order-new, .check, .admin-order-list, .admin-individual-show {
   height: auto;
   width: 150px;
   border-bottom: solid;
   border-width: 5px;
   border-color: #FFD1D1;
-}
-
-.register, .address, .form-group {
-  color: #5c3e26;
 }
 
 .individual-list {
@@ -19,4 +15,8 @@
   border-bottom: solid;
   border-width: 5px;
   border-color: #FFD1D1;
+}
+
+.thanks-text {
+  line-height: 620px;
 }
