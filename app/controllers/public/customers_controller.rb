@@ -3,10 +3,12 @@ class Public::CustomersController < ApplicationController
 
   def show
     @customer = current_customer
+    @genres = Genre.all
   end
 
   def edit
     @customer = current_customer
+    @genres = Genre.all
   end
 
   def update
@@ -19,7 +21,8 @@ class Public::CustomersController < ApplicationController
     end
   end
 
-  def confirm
+  def unsubscribe
+    @genres = Genre.all
   end
 
   def withdraw

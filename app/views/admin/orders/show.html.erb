@@ -36,7 +36,7 @@
             <td>
               <%= form_with model: @order, url: admin_order_path, method: :patch do |f| %>
                <%= f.select :status, Order.statuses_i18n.invert, {}, class:"form-control col-10" %>
-                <%= f.submit '更新', class:"btn btn-success col-10" %>
+                <%= f.submit '更新', class:"btn col-10", style: "background-color: #64CCC5; color: white;" %>
               <% end %>
             </td>
           </tr>
@@ -66,7 +66,7 @@
               <td>
                 <%= form_with model: order_detail, url: admin_order_detail_path(order_detail), method: :patch do |f| %>
                   <%= f.select :making_status, OrderDetail.making_statuses.keys.map { |status| [I18n.t("enums.order_detail.making_status.#{status}"), status] }, {}, class: "form-control" %>
-                  <%= f.submit '更新', class:"btn btn-success form-control" %>
+                  <%= f.submit '更新', class:"btn form-control", style: "background-color: #64CCC5; color: white;" %>
                 <% end %>
               </td>
             </tr>

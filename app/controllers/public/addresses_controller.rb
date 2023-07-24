@@ -3,9 +3,11 @@ class Public::AddressesController < ApplicationController
   def index
     @addresses = current_customer.addresses.all
     @address = Address.new
+    @genres = Genre.all
   end
 
   def create
+    @genres = Genre.all
     @address = Address.new(address_params)
     @address.customer_id = current_customer.id
     if @address.save
@@ -20,6 +22,7 @@ class Public::AddressesController < ApplicationController
 
   def edit
     @address = Address.find(params[:id])
+    @genres = Genre.all
   end
 
   def update

@@ -17,9 +17,9 @@
     <td><%= f.text_field :name %></td>
     <td>
       <% if current_page?(addresses_path) %>
-        <%= f.submit "新規登録", class:"btn btn-success" %>
+        <%= f.submit "新規登録", class:"btn", style: "background-color: #9AC5F4; color: white;" %>
       <% else %>
-        <%= f.submit "変更内容を保存", class:"btn btn-success" %>
+        <%= f.submit "変更内容を保存", class:"btn", style: "background-color: #9AC5F4; color: white;" %>
       <% end %>
     </td>
   </tr>

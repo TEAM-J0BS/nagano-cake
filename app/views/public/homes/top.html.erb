@@ -1,22 +1,32 @@
-<div id="splash">
-  <p>Nagano Cake</p>
+<div class="slideshow-container">
+  <div class="slide fade">
+    <%= image_tag "top/top1.jpg" %>
+  </div>
+  <div class="slide fade">
+    <%= image_tag "top/top2.jpg" %>
+  </div>
+  <div class="slide fade">
+    <%= image_tag "top/top3.jpg" %>
+  </div>
+  <div class="slide fade">
+    <%= image_tag "top/top4.jpg" %>
+  </div>
 </div>
-<div class="splashbg1"></div>
-<div class="splashbg2"></div>
+
+<div class="backimage">
+  <a>
+    <%= link_to root_path, data: { "turbolinks" => false }, class: "mx-4" do %>
+      <%= image_tag "logor1.png", alt: "LOGO", size: "250x200", class: "logo" %>
+    <% end %>
+  </a>
+  <div class="text">
+    <p class="guidance">ようこそ、ながのcakeへ！<br>このサイトは、ケーキ販売のECサイトになります。<br>会員でない方も商品の閲覧はできますが、<br>購入には会員登録が必要になります。</p>
+  </div>
+</div>
 
 <div class="container mt-5" id="container">
   <div class="row">
-    <div class="col-md-2">
-      <%= render "/public/items/genre", genres: @genres %>
-    </div>
-    <div class="col-md-10">
-      <div class="backimage">
-        <%= image_tag 'top.jpg', class: "image img-fluid" %>
-        <div class="text">
-          <p class="guidance">ようこそ、ながのcakeへ！<br>このサイトは、ケーキ販売のECサイトになります。<br>会員でない方も商品の閲覧はできますが、<br>購入には会員登録が必要になります。</p>
-        </div>
-      </div>
-
+    <div class="col">
       <div class="mt-5">
         <h3><strong>新着商品</strong></h3>
         <div class="row mt-4">
@@ -35,3 +45,20 @@
     </div>
   </div>
 </div>
+
+
+<script>
+  let slideIndex = 0;
+  showSlides();
+
+  function showSlides() {
+    const slides = document.querySelectorAll(".slide.fade");
+    slideIndex++;
+    if (slideIndex > slides.length) {
+      slideIndex = 1;
+    }
+    slides[slideIndex - 1].style.opacity = "1";
+     slides[slideIndex - 2 < 0 ? slides.length - 1 : slideIndex - 2].style.opacity = "0";
+    setTimeout(showSlides, 6000); // スライドを切り替え時間
+  }
+</script>
