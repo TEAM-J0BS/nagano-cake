@@ -26,7 +26,7 @@ class Public::CartItemsController < ApplicationController
 
   def destroy_all
     if current_customer.cart_items.destroy_all
-      redirect_to items_path, notice: "カートを空にしました。"
+      redirect_to cart_items_path, notice: "カートを空にしました。"
     else
       redirect_to cart_items_path, notice: "削除に失敗しました。"
     end
