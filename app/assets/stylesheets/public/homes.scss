@@ -173,4 +173,10 @@ header.sticky-top.scrolled {
 /*ホバー時のデザイン*/
 .pagination>li>a:hover {
   border-radius: 15px;    /*角を丸くする*/
+
+.h4 {
+  border-bottom: solid;
+  border-width: 5px;
+  border-color: #FFD1D1;
+  width: 150px;
 }

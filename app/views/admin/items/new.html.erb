@@ -1,4 +1,4 @@
-<h4 class="my-4 mr-10">商品新規登録</h4>
+<h2 class="mx-auto mt-3">商品新規登録</h2>
 <div class='container'>
   <div class='row'>
     <div class="col-sm-12 col-md-8 col-lg-5 px-5 px-sm-0 mx-auto">
@@ -38,11 +38,12 @@
               <%= f.label :is_available, "販売停止中" %>
            </td>
         </tr>
-
         <tr>
           <td></td>
-          <td><%= f.submit '新規登録', class: "btn btn-success" %></td>
-              <% end %>
+          <td>
+            <%= f.submit '新規登録', class: "btn", style: "background-color: #64CCC5; color: white; mx-3" %>
+            <% end %>
+          </td>
         </tr>
       </table>
     </div>
