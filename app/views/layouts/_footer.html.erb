@@ -1,13 +1,87 @@
 <footer class="">
   <div class="container">
     <div class="row">
-      <div class="mx-auto my-5 d-flex align-items-center">
-        <p>Nagano Cake</p>
-        <i class="fab fa-instagram-square ml-3 fa-2x"></i>
-        <i class="fab fa-twitter-square ml-2 fa-2x"></i>
-        <i class="fab fa-line ml-2 fa-2x"></i>
-        <i class="fab fa-youtube ml-2 fa-2x"></i>
+      <div class="col-md-5">
+        <div class="mx-auto my-5 d-flex align-items-center">
+          <i class="fas fa-envelope-square fa-2x fa-icon" style="color: #FFF5E4;"></i>
+
+          <div class="icon-container">
+            <i id="info-icon-1" class="fas fa-info-circle ml-3 fa-2x fa-icon" style="color: #FFF5E4;"></i>
+            <div class="info-dropdown" id="info-dropdown-1">
+              <ul>
+                <li>特定商取引法に関する表記</li>
+                <li>利用規約</li>
+                <li>プライバシーポリシー</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="icon-container">
+            <i id="info-icon-2" class="fas fa-share-alt-square mx-3 fa-2x fa-icon" style="color: #FFF5E4;"></i>
+             <div class="info-dropdown" id="info-dropdown-2">
+              <ul>
+                <li><i class="fa-brands fa-twitter" style="color: #1ae6ea;"></i>ツイートする</li>
+                <li><i class="fa-brands fa-line" style="color: #4bff0a;"></i>シェアする</li>
+              </ul>
+            </div>
+          </div>
+
+
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="mx-auto my-5 d-flex align-items-center">
+        <h5>Nagano Cake</h5>
+        </div>
+      </div>
+
+      <div class="col-md-3">
+        <div class="mx-auto my-5 d-flex align-items-center">
+        <i class="fab fa-instagram-square ml-5 fa-2x fa-icon" style="color: #664a4a;"></i>
+        </div>
       </div>
     </div>
   </div>
 </footer>
+
+
+<script>
+const infoIcon1 = document.getElementById('info-icon-1');
+const infoIcon2 = document.getElementById('info-icon-2');
+const infoDropdown1 = document.getElementById('info-dropdown-1');
+const infoDropdown2 = document.getElementById('info-dropdown-2');
+
+infoIcon1.addEventListener('mouseover', () => {
+  infoDropdown1.style.display = 'block';
+});
+
+infoIcon1.addEventListener('mouseout', () => {
+  infoDropdown1.style.display = 'none';
+});
+
+infoDropdown1.addEventListener('mouseover', () => {
+  infoDropdown1.style.display = 'block';
+});
+
+infoDropdown1.addEventListener('mouseout', () => {
+  infoDropdown1.style.display = 'none';
+});
+
+infoIcon2.addEventListener('mouseover', () => {
+  infoDropdown2.style.display = 'block';
+});
+
+infoIcon2.addEventListener('mouseout', () => {
+  infoDropdown2.style.display = 'none';
+});
+
+infoDropdown2.addEventListener('mouseover', () => {
+  infoDropdown2.style.display = 'block';
+});
+
+infoDropdown2.addEventListener('mouseout', () => {
+  infoDropdown2.style.display = 'none';
+});
+
+</script>

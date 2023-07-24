@@ -44,6 +44,7 @@ class Public::OrdersController < ApplicationController
   end
 
   def complete
+    @genres = Genre.all
   end
 
   def create
@@ -68,11 +69,13 @@ class Public::OrdersController < ApplicationController
   def index
     @orders = Order.all.order("created_at desc")
     @orders = current_customer.orders.order("created_at desc")
+    @genres = Genre.all
   end
 
   def show
     @order = Order.find(params[:id])
     @cart_items = current_customer.cart_items
+    @genres = Genre.all
   end
 
   private

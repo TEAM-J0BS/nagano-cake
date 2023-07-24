@@ -2,9 +2,43 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
+/* スライドショーのコンテナ */
+.slideshow-container {
+  width: 100%;
+  height: 800px; /* スライドショーの高さを調整 */
+  overflow: hidden;
+  position: relative;
+}
 
+/* スライド要素 */
+.slide {
+  width: 100%;
+  height: 800px;
+　object-fit: contain;
+  position: absolute;
+}
+
+.slide img {
+  width: inherit;
+  height: inherit;
+  margin: 0;
+  padding: 0;
+  border: none;
+}
+
+.slide.fade:first-child {
+  opacity: 1;
+}
+
+
+/*
 .backimage {
   position: relative;
+  width: 100%;
+  height: 650px;
+  background-image: url(top.jpg);
+  background-size: cover;
+  background-attachment: fixed;
 }
 
 .backimage .image {
@@ -13,11 +47,19 @@
   height: auto;
   border-radius: 20px;
 }
+*/
+
+.backimage .logo {
+  position: absolute;
+  top: 38%; 
+  left: 30%; 
+  z-index: 2; 
+}
 
 .backimage .text {
   position: absolute;
   top: 50%;
-  left: 50%;
+  left: 60%;
   transform: translate(-50%, -50%);
   text-align: center;
 }
@@ -25,9 +67,112 @@
 .backimage .text .guidance {
   font-size: 18px;
   color: #fff;
-  background-color: rgba(0, 0, 0, 0.7);
+  background-color: rgba(255, 192, 203, 0.7);
   padding: 20px;
+  border-radius: 10px;
 }
+
+
+
+/* スクロールヘッダー */
+/* 通常のヘッダースタイル */
+
+
+header.sticky-top {
+  background-color: rgba(255, 255, 255, 0); /* 透明な背景色 */
+  transition: background-color 0.3s; /* 0.3秒で背景色の変化をアニメーションさせる */
+}
+
+/* 下にスクロールしたときに半透明にするスタイル */
+header.sticky-top.scrolled {
+  background-color: rgba(255, 255, 255, 0.7); /* 半透明な背景色に変更 */
+}
+
+
+
+/* 新着商品スライドショー */
+.slider {
+  width: 94%;
+  margin: 0 auto;
+}
+
+.slider img {
+  width: 300px;
+  height: 200px;
+}
+
+.slider .slick-slide {
+  transform: scale(0.8);
+  transition: all 0.5s;
+  opacity: 0.5;
+}
+
+.slider .slick-slide.slick-center {
+  transform: scale(1);
+  opacity: 1;
+}
+
+.slick-prev,
+.slick-next {
+  position: absolute;
+  top: 42%;
+  cursor: pointer;
+  outline: none;
+  border-top: 2px solid #666;
+  border-right: 2px solid #666;
+  height: 15px;
+  width: 15px;
+}
+
+.slick-prev {
+  left: -1.5%;
+  transform: rotate(-135deg);
+}
+
+.slick-next {
+  right: -1.5%;
+  transform: rotate(45deg);
+}
+
+.slick-dots {
+  text-align: center;
+  margin: 20px 0 0 0;
+}
+
+.slick-dots li {
+  display: inline-block;
+  margin: 0 5px;
+}
+
+.slick-dots button {
+  color: transparent;
+  width: 12px;
+  height: 12px;
+  display: block;
+  border-radius: 50%;
+  background: #FFC0CB;
+  border: none;
+}
+
+.slick-dots .slick-active button {
+  background: #FF1493;
+}
+
+/*ページネーション自体のデザイン*/
+.pagination>li>a {
+  border: none;     /*枠線をなくす*/
+  color: #696969;   /*文字の色を変える*/
+}
+
+/* 表示しているページ番号のデザイン */
+.pagination>.active>a {
+  background: #93c9ff;     /*背景の色を変える*/
+  border-radius: 15px;     /*角を丸くする*/
+}
+
+/*ホバー時のデザイン*/
+.pagination>li>a:hover {
+  border-radius: 15px;    /*角を丸くする*/
 
 .h4 {
   border-bottom: solid;
