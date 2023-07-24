@@ -230,3 +230,38 @@ body.appear #container {
 .pagination>li>a:hover {        
   border-radius: 15px;    /*角を丸くする*/
 }
+
+header {
+ background-color: #FFE3E1;
+}
+
+
+footer {
+ background-color: #FF9494;
+}
+
+
+main {
+ background-color: #FFF5E4;
+}
+
+h1,h2,h3,h4,h5,p,th,td,genre,.genreedit {
+ color: #6C3428;
+ font-family: 'Sawarabi Mincho', sans-serif;
+}
+
+th {
+ background-color: #FF9494;
+}
+
+td {
+  background-color: #FFE3E1;
+}
+
+.complete, .cart, .input, .comfirm {
+  height: 620px;
+}
+
+.thanks-text {
+  line-height: 620px;
+}
