@@ -1,3 +1,51 @@
 // Place all the styles related to the public/items controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+
+
+h2 {
+  border-bottom: solid;
+  border-width: 5px;
+  border-color: #FFD1D1;
+  width: 200px;
+}
+
+
+.show {
+  padding: 20px 0;
+  background-color: #FFE3E1;
+  width: 800px;
+  height: 300px;
+  border-radius: 8px;
+}
+
+
+.item {
+  height: 620px;
+}
+
+.index {
+  background-color: #FFE3E1;
+}
+
+.genre {
+  color: #6C3428;
+  border-color: #FFD1D1;
+ font-family: 'Sawarabi Mincho', sans-serif;
+}
+
+.genres {
+  background-color: #FFE3E1;
+}
+
+.link {
+  text-decoration: none;
+  color: #5c3e26;
+  border-bottom: solid;
+  border-width: 1px;
+  border-color: #5c3e26;
+}
+
+.genresearch {
+  background-color: #FFE3E1;
+}

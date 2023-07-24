@@ -246,7 +246,7 @@ main {
 }
 
 /*追加箇所*/
-h1, h4, p, th, td {
+h1, h2, h3, h4, h5, p, th, td, genre, .genreedit {
   color: #5c3e26;
   font-family: 'Sawarabi Mincho', sans-serif;
 }
