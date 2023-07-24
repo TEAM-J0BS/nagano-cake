@@ -11,8 +11,8 @@ import "channels"
 import "jquery";
 import "popper.js";
 import "bootstrap";
-import "../stylesheets/application"; 
-import Swiper from 'swiper/swiper-bundle.js'; 
+import "../stylesheets/application";
+import Swiper from 'swiper/swiper-bundle.js';
 import 'swiper/swiper-bundle.css';
 import "script.js"
 
