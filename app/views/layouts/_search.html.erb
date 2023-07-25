@@ -13,27 +13,3 @@
     </div>
   </div>
 <% end %>
-
-<script>
-  const searchIcon = document.getElementById('search-icon');
-  const searchForm = document.getElementById('search-form');
-  const searchInput = document.getElementById('search-input');
-  let searchVisible = false;
-
-  searchIcon.addEventListener('click', function() {
-    if (!searchVisible) {
-      searchForm.style.width = "200px";
-      searchVisible = true;
-      setTimeout(() => searchInput.focus(), 300);
-    } else {
-      searchForm.querySelector('form').submit();
-    }
-  });
-
-  document.addEventListener('click', function(event) {
-    if (searchVisible && !searchIcon.contains(event.target) && !searchForm.contains(event.target)) {
-      searchForm.style.width = "0";
-      searchVisible = false;
-    }
-  });
-</script>
