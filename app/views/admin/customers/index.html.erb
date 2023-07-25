@@ -17,10 +17,10 @@
               <td><%= link_to customer.full_name, admin_customer_path(customer) %></td>
               <td><%= customer.email %></td>
               <td>
-                <% if customer.customer_status %>
-                  <span class="status-true"><%= customer.customer_status %></span>
+                <% if customer.is_deleted == true %>
+                <span style="color:darkgray;"><%= "退会" %></strong>
                 <% else %>
-                  <%= customer.customer_status %>
+                <strong style="color:orange;"><%= "有効" %></strong>
                 <% end %>
               </td>
             </tr>

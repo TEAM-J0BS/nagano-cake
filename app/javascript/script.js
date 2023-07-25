@@ -73,15 +73,13 @@ document.addEventListener('turbolinks:load', function() {
 $(document).ready(function() {
   var header = $('header.sticky-top');
 
-  // ページ読み込み時とスクロール時に実行
   $(window).on('load scroll', function() {
     var scrollPos = $(this).scrollTop();
 
-    // スクロール量に応じてヘッダーの透明度を調整
     if (scrollPos > 0) {
-      header.addClass('scrolled'); /* scrolledクラスを追加して半透明にする */
+      header.addClass('scrolled'); 
     } else {
-      header.removeClass('scrolled'); /* scrolledクラスを削除して透明にする */
+      header.removeClass('scrolled'); 
     }
   });
 });

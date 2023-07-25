@@ -164,25 +164,6 @@ footer {
   border-color: #5c3e26;
 }
 
-/*ページネーション自体のデザイン*/
-.pagination>li>a {
-  border: none;     /*枠線をなくす*/
-  color: #696969;   /*文字の色を変える*/
-}
-
-/* 表示しているページ番号のデザイン */
-.pagination>.active>a {
-  background: #93c9ff;    
-  border-radius: 15px;    
-}
-
-/*ホバー時のデザイン*/
-.pagination>li>a:hover {
-  border-radius: 15px;   
-}
-
-
-/*追加箇所*/
 p, h1, h2, h3, h4, h5, p, th, td, genre, .genreedit {
   color: #5c3e26;
   font-family: 'Sawarabi Mincho', sans-serif;
@@ -202,32 +183,32 @@ td {
 
 /* ログイン・新規会員登録のリンクの色 */
 .login-btn-container a {
-  color: #5c3e26; 
-  text-decoration: none; 
+  color: #5c3e26;
+  text-decoration: none;
 }
 
 .login-btn-container a:hover {
-  color: #8b5c38; 
+  color: #8b5c38;
 }
 
 /* ジャンルのリンクの色 */
 .category-dropdown a {
-  color: #5c3e26; 
-  text-decoration: none; 
+  color: #5c3e26;
+  text-decoration: none;
 }
 
 .category-dropdown a:hover {
-  color: #8b5c38; 
+  color: #8b5c38;
 }
 
 /* マイページのリンクの色 */
 .mypage-dropdown a {
-  color: #5c3e26; 
-  text-decoration: none; 
+  color: #5c3e26;
+  text-decoration: none;
 }
 
 .mypage-dropdown a:hover {
-  color: #8b5c38; 
+  color: #8b5c38;
 }
 
 .category-container:hover {

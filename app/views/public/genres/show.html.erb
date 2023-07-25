@@ -4,18 +4,20 @@
       <div class="col-md-2">
         <%= render "public/items/genre", genre: @genres %>
       </div>
-    <div class="col-md-10">
-      <h2 class="font-weight-normal mt-3">商品一覧</h2>
-      <div class="row justify-content-center">
-      <% @genre.items.each do |item| %>
-      <div class="one-post">
-        <%= link_to item_path(item) do %>
-        <p class="caption mx-2"><%= image_tag item.image, format: 'jpeg', size: '300x200' %></p>
-        <% end %>
-        <p class="caption"><%= item.name %></p>
-        <p class="caption">¥<%= item.price.to_s(:delimited) %></p>
+        <div class="col-md-10">
+          <h2 class="font-weight-normal mt-3">商品一覧</h2>
+          <div class="row justify-content-center">
+          <% @genre.items.each do |item| %>
+          <div class="one-post">
+            <%= link_to item_path(item) do %>
+            <p class="caption mx-2"><%= image_tag item.image, format: 'jpeg', size: '300x200' %></p>
+            <% end %>
+            <p class="caption"><%= item.name %></p>
+            <p class="caption">¥<%= item.price.to_s(:delimited) %></p>
+          </div>
+          <% end %>
+        </div>
       </div>
-      <% end %>
     </div>
   </div>
 </div>
