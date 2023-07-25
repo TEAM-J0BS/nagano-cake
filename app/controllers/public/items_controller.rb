@@ -5,6 +5,7 @@ class Public::ItemsController < ApplicationController
     @items = Item.page(params[:page]).per(5)
     @genres = Genre.all
     @q = Item.ransack(params[:q]) # @q 変数を追加
+    @items_all = Item.all
     @search_items = @q.result(distinct: true).page(params[:page]) # 検索結果を @search_items に代入
   end
 
