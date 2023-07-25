@@ -31,11 +31,15 @@
         <h3><strong>新着商品</strong></h3>
         <div class="row mt-4">
           <ul class="slider">
-            <li><%= image_tag "practice/1.jpg" %></li>
-            <li><%= image_tag "practice/2.jpg" %></li>
-            <li><%= image_tag "practice/3.jpg" %></li>
-            <li><%= image_tag "practice/4.jpg" %></li>
-            <li><%= image_tag "practice/5.jpg" %></li>
+            <% @new_items.each do |item| %>
+            <li>
+              <%= link_to item_path(item) do %>
+                <p class="caption mx-2"><%= image_tag item.image, format: 'jpeg', size: '300x200' %></p>
+              <% end %>
+                <p class="caption"><%= item.name %></p>
+                <p class="caption">¥<%= item.with_tax_price.to_s(:delimited) %></p>
+            </li>
+        <% end %>
           </ul>
         </div>
         <p class="text-center mt-5">
@@ -59,6 +63,6 @@
     }
     slides[slideIndex - 1].style.opacity = "1";
      slides[slideIndex - 2 < 0 ? slides.length - 1 : slideIndex - 2].style.opacity = "0";
-    setTimeout(showSlides, 6000); // スライドを切り替え時間
+    setTimeout(showSlides, 6000); // スライドの切り替え時間
   }
 </script>

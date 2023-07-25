@@ -5,7 +5,7 @@
 /* スライドショーのコンテナ */
 .slideshow-container {
   width: 100%;
-  height: 800px; /* スライドショーの高さを調整 */
+  height: 800px; 
   overflow: hidden;
   position: relative;
 }
@@ -29,25 +29,6 @@
 .slide.fade:first-child {
   opacity: 1;
 }
-
-
-/*
-.backimage {
-  position: relative;
-  width: 100%;
-  height: 650px;
-  background-image: url(top.jpg);
-  background-size: cover;
-  background-attachment: fixed;
-}
-
-.backimage .image {
-  display: block;
-  width: 100%;
-  height: auto;
-  border-radius: 20px;
-}
-*/
 
 .backimage .logo {
   position: absolute;
@@ -79,13 +60,13 @@
 
 
 header.sticky-top {
-  background-color: rgba(255, 255, 255, 0); /* 透明な背景色 */
-  transition: background-color 0.3s; /* 0.3秒で背景色の変化をアニメーションさせる */
+  background-color: rgba(255, 255, 255, 0); 
+  transition: background-color 0.3s; 
 }
 
 /* 下にスクロールしたときに半透明にするスタイル */
 header.sticky-top.scrolled {
-  background-color: rgba(255, 255, 255, 0.7); /* 半透明な背景色に変更 */
+  background-color: rgba(255, 255, 255, 0.7); 
 }
 
 
@@ -158,21 +139,43 @@ header.sticky-top.scrolled {
   background: #FF1493;
 }
 
+
+/* 新着商品リスト装飾 */
+.slider li {
+  background-color: #FFE3E1; 
+  padding: 10px; 
+  border-radius: 10px; 
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); 
+  text-align: center;
+}
+
+.slider li p {
+  margin: 5px 0; /* 段落の間隔 */
+}
+
+.slider li p.caption {
+  font-family: 'Sawarabi Mincho', sans-serif; 
+  font-size: 16px; 
+  color: #FF1493; 
+  font-weight: bold; 
+}
+
+
 /*ページネーション自体のデザイン*/
 .pagination>li>a {
-  border: none;     /*枠線をなくす*/
-  color: #696969;   /*文字の色を変える*/
+  border: none;   
+  color: #696969;   
 }
 
 /* 表示しているページ番号のデザイン */
 .pagination>.active>a {
-  background: #93c9ff;     /*背景の色を変える*/
-  border-radius: 15px;     /*角を丸くする*/
+  background: #93c9ff;   
+  border-radius: 15px;  
 }
 
 /*ホバー時のデザイン*/
 .pagination>li>a:hover {
-  border-radius: 15px;    /*角を丸くする*/
+  border-radius: 15px;    
 }
 
 .h4 {

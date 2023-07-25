@@ -172,18 +172,18 @@ footer {
 
 /* 表示しているページ番号のデザイン */
 .pagination>.active>a {
-  background: #93c9ff;     /*背景の色を変える*/
-  border-radius: 15px;     /*角を丸くする*/
+  background: #93c9ff;    
+  border-radius: 15px;    
 }
 
 /*ホバー時のデザイン*/
 .pagination>li>a:hover {
-  border-radius: 15px;    /*角を丸くする*/
+  border-radius: 15px;   
 }
 
 
 /*追加箇所*/
-h1, h2, h3, h4, h5, p, th, td, genre, .genreedit {
+p, h1, h2, h3, h4, h5, p, th, td, genre, .genreedit {
   color: #5c3e26;
   font-family: 'Sawarabi Mincho', sans-serif;
 }
@@ -233,4 +233,3 @@ td {
 .category-container:hover {
   cursor: pointer;
 }
-
