@@ -5,18 +5,22 @@
         <%= render "genre", genre: @genres %>
       </div>
     <div class="col-md-10">
+      <div class="item_index">
       <h2 class="font-weight-normal mt-3">商品一覧(全<%= @items_all.count %>件)</h2>
-      
+      </div>
       <div class="row justify-content-center">
       <% @items.each do |item| %>
       <div class="one-post">
         <%= link_to item_path(item) do %>
-        <p class="caption mx-2"><%= image_tag item.image, format: 'jpeg', size: '300x200' %></p>
+        <p class="caption mx-2 mt-5"><%= image_tag item.image, format: 'jpeg', size: '300x200' %></p>
         <% end %>
         <p class="caption"><%= item.name %></p>
         <p class="caption">¥<%= item.with_tax_price.to_s(:delimited) %></p>
-        <p class="caption"><%= %></p>
-        <p class="caption"><%= %></p>
+        <% if item.is_available == true %>
+        <p class="text-success">販売中</b>
+        <% else %>
+        <p class="text-danger">販売停止中</p>
+        <% end %>
       </div>
       <% end %>
     </div>
