@@ -5,7 +5,7 @@
 /* スライドショーのコンテナ */
 .slideshow-container {
   width: 100%;
-  height: 800px; 
+  height: 800px;
   overflow: hidden;
   position: relative;
 }
@@ -60,13 +60,13 @@
 
 
 header.sticky-top {
-  background-color: rgba(255, 255, 255, 0); 
-  transition: background-color 0.3s; 
+  background-color: rgba(255, 255, 255, 0);
+  transition: background-color 0.3s;
 }
 
 /* 下にスクロールしたときに半透明にするスタイル */
 header.sticky-top.scrolled {
-  background-color: rgba(255, 255, 255, 0.7); 
+  background-color: rgba(255, 255, 255, 0.7);
 }
 
 
@@ -91,6 +91,26 @@ header.sticky-top.scrolled {
 .slider .slick-slide.slick-center {
   transform: scale(1);
   opacity: 1;
+}
+
+/* 新着商品リスト装飾 */
+.slider li {
+  background-color: #FFE3E1;
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  text-align: center;
+}
+
+.slider li p {
+  margin: 5px 0;
+}
+
+.slider li p.caption {
+  font-family: 'Sawarabi Mincho', sans-serif;
+  font-size: 16px;
+  color: #FF1493;
+  font-weight: bold;
 }
 
 .slick-prev,
@@ -139,48 +159,10 @@ header.sticky-top.scrolled {
   background: #FF1493;
 }
 
-
-/* 新着商品リスト装飾 */
-.slider li {
-  background-color: #FFE3E1; 
-  padding: 10px; 
-  border-radius: 10px; 
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); 
-  text-align: center;
-}
-
-.slider li p {
-  margin: 5px 0; /* 段落の間隔 */
-}
-
-.slider li p.caption {
-  font-family: 'Sawarabi Mincho', sans-serif; 
-  font-size: 16px; 
-  color: #FF1493; 
-  font-weight: bold; 
-}
-
-
-/*ページネーション自体のデザイン*/
-.pagination>li>a {
-  border: none;   
-  color: #696969;   
-}
-
-/* 表示しているページ番号のデザイン */
-.pagination>.active>a {
-  background: #93c9ff;   
-  border-radius: 15px;  
-}
-
-/*ホバー時のデザイン*/
-.pagination>li>a:hover {
-  border-radius: 15px;    
-}
-
 .h4 {
   border-bottom: solid;
   border-width: 5px;
   border-color: #FFD1D1;
   width: 150px;
 }
+

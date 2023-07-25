@@ -8,6 +8,7 @@ class Admin::OrderDetailsController < ApplicationController
     @making_statuses = @order_details.pluck(:making_status)
     @order.update(status: "making") if @making_statuses.any?{|val| val == "making" }
     @order.update(status: "standby") if @making_statuses.all?{|val| val ==  "finish"}
+
     redirect_to admin_order_path(@order)
 
     if @order_detail.errors.any?
