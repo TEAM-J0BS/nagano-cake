@@ -3,7 +3,7 @@
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
 
-h2 {
+.item_index {
   border-bottom: solid;
   border-width: 5px;
   border-color: #FFD1D1;
@@ -31,11 +31,18 @@ h2 {
 .genre {
   color: #6C3428;
   border-color: #FFD1D1;
- font-family: 'Sawarabi Mincho', sans-serif;
+  font-family: 'Sawarabi Mincho', sans-serif;
 }
 
 .genres {
   background-color: #FFE3E1;
+}
+
+.genre_show {
+  border-bottom: solid;
+  border-width: 5px;
+  border-color: #FFD1D1;
+  width: 280px;
 }
 
 .link {
@@ -49,3 +56,4 @@ h2 {
 .genresearch {
   background-color: #FFE3E1;
 }
+
