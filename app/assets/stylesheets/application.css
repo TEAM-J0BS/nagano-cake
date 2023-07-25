@@ -14,6 +14,30 @@
  */
 
 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: #6c6b6b;
+}
+
+html, body, main {
+ background-color: #FFF5E4;
+ margin: 0;
+ height: 100%
+}
+
+header {
+ background-color: #FFE3E1;
+}
+
+footer {
+ background-color: #FF9494;
+ bottom: 0;
+ left: 0;
+ width: 100%;
+}
+
 /* ページネーション */
 .pagination {
   justify-content: center;
@@ -21,11 +45,6 @@
 
 .backimage-text {
   position: relative;
-}
-
-
-footer {
-  background-color: white;
 }
 
 .fa-icon {
@@ -40,7 +59,7 @@ footer {
 .info-dropdown {
   display: none;
   position: absolute;
-  top: -180%;
+  top: -250%;
   background-color: white;
   color: black;
   padding: 5px;
@@ -57,7 +76,6 @@ footer {
 }
 
 .info-dropdown li {
-  /* 追加: リスト項目を横に並べる */
   display: inline-block;
   margin-right: 10px;
 }
@@ -146,19 +164,6 @@ footer {
   border-color: #5c3e26;
 }
 
-header {
- background-color: #FFE3E1;
-}
-
-
-footer {
- background-color: #FF9494;
-}
-
-main {
- background-color: #FFF5E4;
-}
-
 /*ページネーション自体のデザイン*/
 .pagination>li>a {
   border: none;     /*枠線をなくす*/
@@ -176,19 +181,6 @@ main {
   border-radius: 15px;    /*角を丸くする*/
 }
 
-header {
- background-color: #FFE3E1;
-}
-
-
-footer {
- background-color: #FF9494;
-}
-
-
-main {
- background-color: #FFF5E4;
-}
 
 /*追加箇所*/
 h1, h2, h3, h4, h5, p, th, td, genre, .genreedit {
@@ -200,14 +192,6 @@ h1, h2, h3, h4, h5, p, th, td, genre, .genreedit {
   height: 620px;
 }
 
-.link {
-  text-decoration: none;
-  color: #5c3e26;
-  border-bottom: solid;
-  border-width: 1px;
-  border-color: #5c3e26;
-}
-
 th {
   background-color: #FFD1D1;
 }
@@ -215,3 +199,38 @@ th {
 td {
   background-color: #FFE3E1;
 }
+
+/* ログイン・新規会員登録のリンクの色 */
+.login-btn-container a {
+  color: #5c3e26; 
+  text-decoration: none; 
+}
+
+.login-btn-container a:hover {
+  color: #8b5c38; 
+}
+
+/* ジャンルのリンクの色 */
+.category-dropdown a {
+  color: #5c3e26; 
+  text-decoration: none; 
+}
+
+.category-dropdown a:hover {
+  color: #8b5c38; 
+}
+
+/* マイページのリンクの色 */
+.mypage-dropdown a {
+  color: #5c3e26; 
+  text-decoration: none; 
+}
+
+.mypage-dropdown a:hover {
+  color: #8b5c38; 
+}
+
+.category-container:hover {
+  cursor: pointer;
+}
+

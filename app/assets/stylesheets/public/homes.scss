@@ -51,9 +51,9 @@
 
 .backimage .logo {
   position: absolute;
-  top: 38%; 
-  left: 30%; 
-  z-index: 2; 
+  top: 38%;
+  left: 30%;
+  z-index: 2;
 }
 
 .backimage .text {
@@ -173,6 +173,7 @@ header.sticky-top.scrolled {
 /*ホバー時のデザイン*/
 .pagination>li>a:hover {
   border-radius: 15px;    /*角を丸くする*/
+}
 
 .h4 {
   border-bottom: solid;

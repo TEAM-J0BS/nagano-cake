@@ -16,7 +16,13 @@
               <td><%= customer.id %></td>
               <td><%= link_to customer.full_name, admin_customer_path(customer) %></td>
               <td><%= customer.email %></td>
-              <td><%= customer.customer_status %></td>
+              <td>
+                <% if customer.customer_status %>
+                  <span class="status-true"><%= customer.customer_status %></span>
+                <% else %>
+                  <%= customer.customer_status %>
+                <% end %>
+              </td>
             </tr>
           <% end %>
         </table>
