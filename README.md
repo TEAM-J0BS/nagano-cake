@@ -51,6 +51,7 @@ $ rails db:migrate
 $ rails db:seed
 $ yarn install
 $ bundle install
+$ yarn add @babel/plugin-proposal-private-methods @babel/plugin-proposal-private-property-in-object
 $ rails s
 ```
 
